@@ -5,99 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meu blog</title>
     <style>
-          body {
+        body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
         }
         header {
             background-color: rgb(247, 247, 248);
+            padding: 20px;
         }
-         header h1 {
+        header h1 {
             margin: 0;
             font-size: 40px;
         }
-
         main {
             width: 80%;
             margin: auto;
             padding: 30px;
-
         }
-
-        img{
-            page: 80px;
-            
-        }
-
         section {
             background-color: white;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 10px;
         }
-
         h2 {
             color: #009c3b;
         }
-
         .titulos {
             background-color: #ffdf00;
             padding: 15px;
             border-radius: 10px;
         }
-
         footer {
             background-color: #002776;
             color: white;
             text-align: center;
             padding: 15px;
         }
+        .artigo-autor {
+            font-weight: bold;
+        }
+        button {
+            cursor: pointer;
+            padding: 8px 12px;
+            font-size: 16px;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body> 
     <header>
-            <h1>    brasil na copa   </h1>
-            <p> selecao brasileira em copas do mundo  </p>    
+        <h1>Brasil na Copa</h1>
+        <p>Seleção brasileira em Copas do Mundo</p>    
     </header>
 
-<main>
+    <main>
+        <!-- Corrigido as aspas duplas extras no atributo alt -->
+        <img src="imagem-blog.png" alt="Da conquista de 1958 ao penta de 2002: explore a lendária trajetória do Brasil na história das Copas do Mundo.">
 
-    <img src="imagem-blog.png" alt=""Da conquista de 1958 ao penta de 2002: explore a lendaria trajetoria do Brasil na historia das Copas do Mundo."" srcset="">
+        <div>
+            <h2>Brasil na Copa do Mundo</h2>
+            <p>A seleção brasileira é a maior campeã e a seleção mais respeitada da competição, tendo 5 títulos:</p>
+            
+            <!-- Corrigido estrutura da lista com ul e li -->
+            <ul>
+                <li>1958</li>
+                <li>1962</li>
+                <li>1970</li>
+                <li>1994</li>
+                <li>2002</li>
+            </ul>
 
-        <h2>  brasil na copa do mundo  </h2>
-        <p>    a selecao brasileira e a maior campea e a selacao mais respeitada da competicao
-             tendo 5 titulos  </p>
-             <ul>1958</ul>
-             <ul>1962</ul>
-             <ul>1970</ul>
-             <ul>1994</ul>
-             <ul>2002</ul>
+            <section>
+                <h2>Grandes jogadores</h2>
+                <p>Pelé, Ronaldo, Romário, Neymar, Rivaldo são alguns dos grandes jogadores que marcaram a história do Brasil. O maior artilheiro da seleção é o Neymar e o jogador com mais copas conquistadas é o Pelé.</p>
+            </section>
 
-              <section>
-        <h2> Grandes jogadores</h2>
-        <p>Pele, Ronaldo, Romario, Neymar, Rivaldo sao alguns dos grantes jogadores que marcaram 
-            a historia do Brasil, o maior artilheiro da selecao e o neymar e o jogador com mais
-            copas conquistadas e o pele </p>
-    </section>
+            <p class="artigo-autor">Por: Matheus</p>
 
-        <p>  por: matheus  </p>
-
-    <button> 😎<espan>0</espan> </button>    
+            <!-- Corrigido de <espan> para <span> -->
+            <button> 😎 <span>0</span> </button>    
+            <button> 🧟 <span>0</span> </button> 
+        </div>
     </main>
-   
 
+    <script>
+        const botoes = document.querySelectorAll("main button");
+
+        botoes.forEach(function(botao) {
+            botao.addEventListener("click", botaoClicado);
+
+            function botaoClicado() {
+                console.log("fui clicado");
+                let texto = botao.querySelector("span");
+                if (texto) {
+                    texto.textContent = Number(texto.textContent) + 1;
+                }
+            }
+        });
+    </script>
 </body>
-  
-<script>
-const botao = document.querySelector("button");
-botao.addEventListener("click", botaoClicado);
-function botaoClicado() {
-console.log("fui clicado");
-let texto = botao.querySelector("span");
-texto.textContent++;
-}
-
-</script>
-
 </html>
+
